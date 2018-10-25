@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane maxHeight="640.0" maxWidth="847.0" minHeight="300.0" minWidth="500.0" prefHeight="640.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+  <columnConstraints>
+    <ColumnConstraints hgrow="SOMETIMES" maxWidth="960.0" minWidth="10.0" prefWidth="517.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="960.0" minWidth="10.0" prefWidth="330.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="449.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+    <RowConstraints maxHeight="616.0" minHeight="10.0" prefHeight="610.0" vgrow="SOMETIMES" />
+  </rowConstraints>
+   <children>
+      <MenuBar prefHeight="25.0" prefWidth="507.0">
+         <menus>
+            <Menu mnemonicParsing="false" text="Open file">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#openPngFile" text="Open PNG" />
+                  <MenuItem mnemonicParsing="false" onAction="#openBinFile" text="Open BIN" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Author">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#authorInfo" text="Click me" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Quit">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#testCyka" text="QUIT(i don`t know where is X button)" />
+               </items>
+            </Menu>
+         </menus>
+      </MenuBar>
+      <MenuBar prefHeight="25.0" prefWidth="507.0" GridPane.columnIndex="1" />
+      <VBox prefHeight="200.0" prefWidth="100.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+         <children>
+            <SplitPane dividerPositions="0.5427631578947368" orientation="VERTICAL" prefHeight="614.0" prefWidth="330.0">
+              <items>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="328.0">
+                     <children>
+                        <Label fx:id="imageInfo" layoutX="14.0" layoutY="14.0" text="Image info" />
+                     </children>
+                  </AnchorPane>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="79.0" prefWidth="328.0">
+                     <children>
+                        <Button fx:id="SaveAsPngButton" alignment="CENTER" contentDisplay="TOP" disable="true" layoutY="31.0" mnemonicParsing="false" onMouseClicked="#savePictureToPngFile" prefHeight="89.0" prefWidth="329.0" text="Save as PNG">
+                           <font>
+                              <Font name="Consolas" size="37.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="SaveAsBinButton" alignment="CENTER" contentDisplay="TOP" disable="true" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#savePictureToBinFile" prefHeight="108.0" prefWidth="329.0" text="Save as BIN">
+                           <font>
+                              <Font name="Consolas" size="37.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+              </items>
+            </SplitPane>
+         </children>
+      </VBox>
+      <ImageView fx:id="picture" fitHeight="321.0" fitWidth="241.0" onMouseClicked="#resovalka" onMouseDragged="#resovalka" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+         <GridPane.margin>
+            <Insets top="15.0" />
+         </GridPane.margin></ImageView>
+   </children>
+</GridPane>
